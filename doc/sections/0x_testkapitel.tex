@@ -1,0 +1,63 @@
+\chapter{Testkapitel}
+
+
+
+
+\section{Beispielauflistungen}
+\begin{itemize}
+\item Item 1
+\item Item 2
+	\begin{itemize}
+		\item SubItem 1
+		\item SubItem 2
+	\end{itemize}
+\end{itemize}
+
+\medskip
+\begin{enumerate}
+\item Item 1
+\item Item 2
+	\begin{enumerate}
+		\item SubItem 1
+		\item SubItem 2	
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section{Beispieltabellen}
+\begin{tabularx}{\textwidth}{|l|l|l|l|}
+	\hline
+	\multicolumn{4}{c}{Titel}\\
+	%\cmidrule(r){1-2}	% für kürzere Linien
+	\hline
+	Spalte 1 & Spalte 2 & Spalte 3 & Spalte 4\\
+	\hline
+	Zelle & Zelle & Zelle & Zelle\\
+	\hline
+	Zelle & Zelle & Zelle & Zelle\\
+	\hline
+	Zelle & Zelle & Zelle & Zelle\\
+	\hline
+	Zelle & Zelle & Zelle & Zelle\\
+	\hline
+	\caption{Beispieltabelle Designtyp 1}
+	\label{tab:example_design01}
+\end{tabularx}
+
+\begin{flushleft}
+	\rowcolors{2}{gray!30}{white}
+	\begin{tabularx}{\textwidth}{|l|l|l|l|}
+		%\toprule
+		\rowcolor{gray!50}
+		Spalte 1 & Spalte 2 & Spalte 3 & Spalte 4\\
+		%\midrule
+		Zelle & Zelle & Zelle & Zelle\\
+		Zelle & Zelle & Zelle & Zelle\\
+		Zelle & Zelle & Zelle & Zelle\\
+		Zelle & Zelle & Zelle & Zelle\\
+		Zelle & Zelle & Zelle & Zelle\\
+		%\bottomrule
+		\caption{Beispieltabelle Designtyp 2}
+		\label{tab:example_design02}
+	\end{tabularx}
+\end{flushleft}

@@ -1,0 +1,443 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Spielanleitung</title>
+</head>
+<body class="grey lighten-3">
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-wrapper container">
+        <a href="#" class="brand-logo center"
+           style="font-size: calc(2rem + ((1vw - .48rem) * 1.389));text-align:center;">Spielanleitung</a>
+    </div>
+</nav>
+
+
+<!-- ACCOUNT MODAL -->
+<div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+        <h4>Account details</h4><br/>
+        <div class="account-details"></div>
+    </div>
+</div>
+
+<!-- CREATE GUIDE MODAL -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <h4>Create Guide</h4><br/>
+        <form id="create-form">
+            <div class="input-field">
+                <input type="text" id="title" required>
+                <label for="title">Guide Title</label>
+            </div>
+            <div class="input-field">
+                <textarea id="content" class="materialize-textarea" required></textarea>
+                <label for="content">Guide Content</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Create</button>
+        </form>
+    </div>
+</div>
+
+<!-- GUIDE LIST -->
+<div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+        <li>
+            <div class="collapsible-header grey lighten-4">Einleitung</div>
+            <div class="collapsible-body white">
+                <span>Auf der bewaldeten Hochebene des Hunsrücks liegt etwas abseits der Wege das kleine Dorf Düsterwald. Seit einiger Zeit geschehen dort unheimliche Dinge: Hungrige Werwölfe streifen zwischen den Häusern umher!
+                    Nacht für Nacht fressen die Werwölfe einen Dorfbewohner. Die unheimlichen Gestaltwandler bleiben unentdeckt und leben tagsüber inmitten der Dorfbevölkerung.
+                    Die Dorfbewohner müssen herausfinden, wer unter ihnen sich nachts in einen Werwolf verwandelt, bevor sie alle diesem uralten Schrecken zum Opfer fallen.
+                    Jeder Spieler erhält eine Charakterkarte, die vorgibt, welchen Charakter der Spieler während einer Spielrunde verkörpert. Dies ist die <b>geheime Identität</b> (kurz: Identität).</span>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header grey lighten-4">Ablauf</div>
+            <div class="collapsible-body white">
+                <h6><b>Vorbereitung</b></h6>
+                <ul class="collection bullet-list" style="list-style-type: initial;">
+                    <li class="collection-item">Anzahl der Mitspieler festlegen</li>
+                    <li class="collection-item">Namen der Mitspieler eingeben.</li>
+                    <li class="collection-item">Charaktere und deren Anzahl festlegen. Spielt der Dieb mit, wähle 2 Charaktere extra aus. </li>
+                    <li class="collection-item">Alle Karten werden durch das Programm verteilt.</li>
+                    <li class="collection-item">Verteile die Charaktere wie berechnet an die Mitspieler (dazu Karten
+                        umdrehen Funktion nutzen)</li>
+                    <li class="collection-item">Spielt der Dieb mit, bleiben 2 Karten über, diese lege bis zur Phase des Diebs beiseite und lege sie ihm dann vor.</li>
+                    <li class="collection-item">Verteile die Berufsplättchen, sowie die zugehörigen Häuser wie berechnet an die Mitspieler (dazu die Berufe anzeigen Funktion nutzen)</li>
+                    <li class="collection-item">Starte mit der ersten Nacht</li>
+                </ul>
+                <h6><b>Nacht</b></h6>
+                <ul class="collection bullet-list" style="list-style-type: initial;">
+                    <li class="collection-item">Dieb (nur erste Nacht)</li>
+                    <li class="collection-item">Wolfshund (nur erste Nacht)</li>
+                    <li class="collection-item">Amor (nur erste Nacht)</li>
+                    <li class="collection-item">Liebespaar (nur erste Nacht)</li>
+                    <li class="collection-item">Seherin</li>
+                    <li class="collection-item">Wildes Kind (nur erste Nacht)</li>
+                    <li class="collection-item">Fuchs</li>
+                    <li class="collection-item">Werwölfe (+ kleines Mädchen)</li>
+                    <li class="collection-item">Urwolf</li>
+                    <li class="collection-item">Weißer Werwolf (jede 2. Nacht)</li>
+                    <li class="collection-item">Großer, böser Wolf (solange kein Werwolf* gestorben)</li>
+                    <li class="collection-item">Hexe</li>
+                    <li class="collection-item">Opfer der Nacht werden angezeigt</li>
+                </ul>
+
+                <h6><b>Tag</b></h6>
+                <ul class="collection bullet-list" style="list-style-type: initial;">
+                    <li class="collection-item">Erster Tag: Wahl des Hauptmanns</li>
+                    <li class="collection-item">Diskussion (inkl. festlegen der Angeklagten)</li>
+                    <li class="collection-item">Abstimmung (wenn mit Hauptmann gespielt wird, zählt seine Stimme doppelt) (bei Stimmengleichstand entscheidet wenn vorhanden der Hauptmann, sonst gibt es eine Stichwahl, steht es dann wieder unentschieden, gibt es kein Opfer)</li>
+                    <li class="collection-item">Opfer des Tages werden angezeigt</li>
+                </ul>
+                <br>
+                <span>Im Folgenden wechseln sich Tag und Nacht immer ab, bis eine Fraktion gewonnen hat. </span>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header grey lighten-4">Fraktionen</div>
+            <div class="collapsible-body white">
+                <h6><b>Dorfbewohner</b></h6>
+                <span>
+				Diese Charaktere sind um das Überleben des Dorfes besorgt und verteidigen es mit Mut und Entschlossenheit. Angesichts der Bedrohung versuchen sie, all jene auszuschalten, die sie für gefährlich halten - auch wenn das manchmal schmerzhaft ist. <br>
+				<b>Ihr Ziel ist es, alle Werwölfe zu finden und unschädlich zu machen.</b>
+				</span>
+                <br><br>
+                <h6><b>Werwölfe</b></h6>
+                Sie können gefährlich und todbringend sein und so das Überleben des Dorfes gefährden. <br>
+                <b>Ihr Ziel ist es, die anderen Dorfbewohner zu fressen.</b>
+                <br><br>
+                <h6><b>Weißer Werwolf</b></h6>
+                Dieser bösartige Charakter verabscheut die Werwölfe ebenso wie die Dorfbewohner. <br>
+                <b>Sein Ziel ist es, als einziger Überlebender im Dorf zu verbleiben.</b>
+                <br><br>
+                <h6><b>Liebespaar</b></h6>
+                Diese Fraktion gibt es nur, wenn ein Verliebter ein Werwolf* und der andere ein Dorfbewohner* ist.<br>
+                <b>Ihr Ziel ist es, alle anderen - unter Beachtung der Spielregeln - zu eliminieren, um gemeinsam in
+                    Liebe weiterleben zu können.</b>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header grey lighten-4">Charaktere</div>
+            <div class="collapsible-body white">
+                <ul class="collapsible z-depth-0 guides" style="border: none;">
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Einfacher Dorfbewohner (kurz: Dorfbewohner)</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b> keine
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Hexe</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Sie wacht nachts nach Aufruf durch den Spielleiter auf und
+                                    bekommt das Opfer der Werwölfe gezeigt.
+                                </li>
+                                <li class="collection-item">Heiltrank - Die Hexe kann <b>einmal</b> in der Partie ein
+                                    Opfer der Werwölfe heilen. Es stirbt dann nicht. Sie darf sich auch selbst heilen.
+                                </li>
+                                <li class="collection-item">Gift - Die Hexe kann <b>einmal</b> in der Partie jemanden
+                                    töten.
+                                </li>
+                                <li class="collection-item">Ob die Tränke verbraucht wurden, darf das Dorf nicht
+                                    erfahren, der Spielleiter muss diese jede Nacht abfragen, als wenn sie noch nicht
+                                    verbraucht wurden.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Jäger</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b> Mit seinem letzten Atemzug wehrt er sich und reißt einen weiteren
+                            Spieler mit in den Tod.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Kleines Mädchen</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Sie darf nachts in der Werwolfphase die Werwölfe mit halb
+                                    geöffneten Augen ausspionieren.
+                                </li>
+                                <li class="collection-item">Sie darf die Augen weder ganz öffnen, noch sich dabei als
+                                    Werwolf ausgeben und verhalten.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Seherin</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b> Sie erfährt in ihrer Phase jede Nacht die Identität eines von ihr
+                            gewählten Mitspielers.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Dieb</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">In der ersten Nacht darf er aus zwei Charakterkarten in der Mitte eine wählen, gegen die er seine tauschen möchte. Liegen dort zwei Werwölfe, muss er einen davon wählen.</li>
+                                <li class="collection-item">Dabei wechselt er ggf. die Fraktion.</li>
+                            </ul>
+                            <br>
+                            Wird mit ihm gespielt, müssen 2 Karten zusätzlich ausgewählt werden.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Amor</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Wird nur in erster Nacht aufgerufen</li>
+                                <li class="collection-item">Sucht zwei Spieler aus, die sich unsterblich ineinander
+                                    verlieben (egal welches Geschlecht)
+                                </li>
+                                <li class="collection-item">Amor darf sich selbst als Verliebten wählen</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <i><div class="collapsible-header grey lighten-4">(Liebespaar)</div></i>
+                        <div class="collapsible-body white">
+                            <span>Kein wirklicher Charakter aber es existieren ähnliche Regeln. </span> <br><br>
+                            <b>Fraktion:</b> Sie bilden eine eigene Fraktion, sofern einer ein Dorfbewohner* und der
+                            andere ein Werwolf* ist
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Wer das Liebespaar ist bleibt geheim</li>
+                                <li class="collection-item">Stirbt einer der Verliebten, stirbt der andere ebenfalls
+                                    sofort
+                                </li>
+                                <li class="collection-item">Die Verliebten dürfen sich nicht gegenseitig schaden. Also
+                                    nicht in der Werwolfphase, auch nicht bei Diskussion, Anklage oder Abstimmung.
+                                </li>
+                                <li class="collection-item">Sie dürfen sich nicht gegenseitig die Identität verraten
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Fuchs</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der Fuchs wacht jede Nacht auf und darf eine Gruppe dreier Nachbarn wählen, indem er auf die mittlere Person zeigt.</li>
+                                <li class="collection-item">Befindet sich in dieser Gruppe mindestens ein Werwolf, zeigt ihm der Spielleiter dies an.</li>
+                                <li class="collection-item">Befindet sich kein Werwolf in dieser Gruppe, so verliert der Fuchs seine Fähigkeit.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <i><div class="collapsible-header grey lighten-4">(Hauptmann)</div></i>
+                        <div class="collapsible-body white">
+                            <span>Kein wirklicher Charakter aber es existieren ähnliche Regeln. </span>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Stimme zählt bei Abstimmungen (Lynch) doppelt.</li>
+                                <li class="collection-item">Bei Gleichstand entscheidet er.</li>
+                                <li class="collection-item">Direkt vor dem Ableben ernennt er seinen Nachfolger.</li>
+                            </ul>
+                            <b>Regeln:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der Hauptmann wird am ersten Tag von den Spielern durch relative Mehrheit gewählt.</li>
+                                <li class="collection-item">Die Ehre, Hauptmann zu sein, darf nicht abgelehnt werden.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Wildes Kind</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner / Werwölfe
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Das Wilde Kind wacht in der ersten Nach auf und darf sich ein Vorbild aussuchen.</li>
+                                <li class="collection-item">Wenn das Vorbild stirbt und das Wilde Kind noch lebt, dann wechselt das Wilde Kind von der Fraktion der Dorfbewohner zu der Fraktion Werwölfe und bekommt auch die Rolle Werwolf.</li>
+                                <li class="collection-item">Das Wilde Kind kann mit den Dorfbewohnern gewinnen (wenn das Vorbild noch lebt) oder als Werwolf (wenn alle Dorfbewohner und das Vorbild gestorben sind).</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Wolfshund</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Dorfbewohner / Werwölfe
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der Wolfshund entscheidet in der ersten Nacht, ob er als einfacher Dorfbewohner, oder als einfacher Werwolf spielen möchte.</li>
+                                <li class="collection-item">Entscheidet er sich für den einfachen Dorfbewohner, wacht er fortan nachts nicht mehr auf.</li>
+                                <li class="collection-item">Entscheidet er sich für den einfachen Werwolf, wacht er fortan nachts mit den Werwölfen auf und sucht sich mit ihnen ein Opfer. Auch sonst zählt er ab sofort als Werwolf.</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Einfacher Werwolf (kurz: Werwolf)</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Werwölfe
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Die Werwölfe wachen jede Nacht nach Aufruf durch den
+                                    Spielleiter auf und fressen einen Dorfbewohner.
+                                </li>
+                                <li class="collection-item">Sie müssen sich dabei einig sein, sonst gibt es kein
+                                    Opfer.
+                                </li>
+                                <li class="collection-item">Sie können keinen anderen Werwolf fressen.</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Urwolf</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Werwölfe
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der Urwolf erwacht jede Nacht mit den Werwölfen auf und sucht sich mit ihnen ein Opfer.</li>
+                                <li class="collection-item">Einmal im Spiel darf er anschließend dieses Opfer infizieren, das somit augenblicklich zu einem Werwolf wird. Der Spielleiter setzt das Opfer durch Berühren hiervon in Kenntnis. Das Opfer führt etwaige nachtaktive Spezialfähigkeiten weiterhin, zusätzlich zur Wolfsphase, aus.</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Großer, böser Wolf</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Werwölfe
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der große, böse Wolf erwacht jede Nacht mit den Werwölfen und sucht sich mit ihnen ein Opfer.</li>
+                                <li class="collection-item">Solange noch kein Werwolf* gestorben ist, darf er jede Nacht noch ein weiteres Opfer fressen, aber keinen Werwolf*.</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Weißer Werwolf</div>
+                        <div class="collapsible-body white">
+                            <b>Fraktion:</b> Weißer Werwolf
+                            <br><br>
+                            <b>Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Der Weiße Werwolf wacht jede Nacht mit den Werwölfen auf und sucht sich mit ihnen ein Opfer.</li>
+                                <li class="collection-item">Jede 2. Nacht wacht er alleine auf und darf, wenn er möchte, einen Werwolf* töten (aber keinen weiteren Dorfbewohner).</li>
+                            </ul>
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header grey lighten-4">Berufe</div>
+            <div class="collapsible-body white">
+                <ul class="collapsible z-depth-0 guides" style="border: none;">
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Vagabund</div>
+                        <div class="collapsible-body white">
+                            <b>Plättchen:</b> Vagabundenbündel
+                            <br><br>
+                            <b>Dauerhafte Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Die Fähigkeiten der Lehrerin, des Barbiers, des Raben und des Brandstifters haben keine Wirkung auf die Vagabunden.</li>
+                                <li class="collection-item">Der Vogt kann zu Beginn eines Tages einen Vagabunden seiner Wahl bestimmen, der in ein freies Haus einziehen darf. Der Vagabund gibt sein Vagabundenbündel ab und erhält das Berufsplättchen des Hauses, auch wenn es bereits eingesetzt wurde.</li>
+                                <li class="collection-item">Ein Vagabund kann sich weigern, in ein Gebäude zu ziehen, das ihm vom Vogt zugewiesen wurde.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Bauer</div>
+                        <div class="collapsible-body white">
+                            <b>Plättchen:</b> Kuh
+                            <br><br>
+                            <b>Dauerhafte Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Ab der zweiten Spielrunde (erster Tag) besprechen und ernennen die Bauern einen von ihnen zum Hauptmann.</li>
+                                <li class="collection-item">Wenn der Hauptmann ausscheidet, ernennt er seinen Nachfolger nur unter den Bauern.</li>
+                                <li class="collection-item">Wenn der letzte Bauer ausscheidet, gibt es keinen Hauptmann mehr.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header grey lighten-4">Beichtvater</div>
+                        <div class="collapsible-body white">
+                            <b>Plättchen:</b> Rosenkranz
+                            <br><br>
+                            <b>Dauerhafte Fähigkeiten:</b>
+                            <ul class="collection bullet-list" style="list-style-type: initial;">
+                                <li class="collection-item">Zu einem beliebigen Zeitpunkt am Tag bestimmt der Beichtvater einen Spieler, der ihm sofort geheim seine Rollenkarte zeigen muss.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<style>
+    .bullet-list .collection-item {
+        list-style-type: disc;
+    }
+
+    ul:not(.browser-default) {
+        padding-left: 25px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+
+    // setup materialize components
+    document.addEventListener('DOMContentLoaded', function () {
+
+        var modals = document.querySelectorAll('.modal');
+        M.Modal.init(modals);
+
+        var items = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(items);
+    });
+</script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

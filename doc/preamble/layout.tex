@@ -1,0 +1,98 @@
+%Hier sind alle Einstellungen enthalten, die sich auf das Seiten- und
+%Dokumentenlayout beziehen
+
+\documentclass[
+  11pt,                   % Schriftgröße
+  %DIV12,
+  german,                 % für Umlaute, Silbentrennung etc.
+  oneside,                % einseitiges Dokument
+  titlepage,              % es wird eine Titelseite verwendet
+  %parskip=half,           % Abstand zwischen Absätzen (halbe Zeile)
+  %headings=normal,        % Größe der Überschriften verkleinern
+  %captions=tableheading,  % Beschriftung von Tabellen unterhalb ausgeben
+  final                   % Status des Dokuments (final/draft)
+]{report}               %
+
+
+\input{preamble/packages}      % enthält eingebundene Packete
+\usepackage{comment}
+
+%------Seitenränder-------------------------------------------------------------
+\geometry{verbose,                     % zeigt die eingestellten Parameter beim
+                                       % Latexlauf an
+      paper=a4paper,                   % Papierformat
+      top=0mm,                        % Rand oben
+      left=25mm,                       % Rand links
+      right=25mm,                      % Rand rechts
+      bottom=25mm,                     % Rand unten
+      pdftex                           % schreibt das Papierformat in die
+                                       % Ausgabe damit Ausgabeprogramm
+                                       % Papiergröße erkennt
+  }
+
+%
+% Fancyheader
+%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\large\praktikumTitel\\ \small\projektTitel\\[-.75cm]}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\leftmark}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \footrulewidth\hfill}}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}%
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot[c]{\thepage}
+}
+%%%%
+
+%Seitenlayout
+\onehalfspace        % 1,5-facher Abstand
+
+%------Kopf- und Fußzeilen -----------------------------------------------------
+%\pagestyle{scrheadings}
+
+%------Kopf- und Fußzeile auch auf Kapitelanfangsseiten ------------------------
+%\renewcommand*{\chapterpagestyle}{scrheadings}
+
+%------Schriftform der Kopfzeile -----------------------------------------------
+%\renewcommand{\headfont}{\normalfont}
+
+%----Farben
+%\definecolor{tuRed}{cmyk}{0.1,1.0,0.8,0.0}
+
+%------Kopfzeile----------------------------------------------------------------
+%\setheadsepline{1pt}[\color{tuRed}]
+%\setlength{\headheight}{10mm}        % Höhe der Kopfzeile
+%\ihead{\large{\textsc{\praktikumTitel}}\\    % Text in der linken Box
+%       \small{\projektTitel}}
+%\chead{}                            % Text in der mittleren Box
+
+%----Fusszeile
+%\setfootsepline{1pt}[\color{tuRed}]
+%\cfoot{}                            % Text in mittlerer Box
+%\ofoot{\pagemark}                    % Seitenzahl in rechter Box
+
+
+
+%------Labels mit eigenem Text für \ref ----------------------------------------
+%\makeatletter
+%\def\namedlabel#1#2{\begingroup
+%#2%
+%\def\@currentlabel{#2}%
+%\phantomsection\label{#1}\endgroup
+%}
+%\makeatother
+
+%------Neue Environments -------------------------------------------------------
+
+%\newcommand{\refsetcounter}[2]{\setcounter{#1}{#2}\addtocounter{#1}{-1}\refstepcounter{#1}}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+

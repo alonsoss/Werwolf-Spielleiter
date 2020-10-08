@@ -1,0 +1,61 @@
+%\documentclass[11pt]{scrartcl}
+
+%
+%Packages
+%
+%\input{preamble/packages.tex}
+
+\input{preamble/layout.tex}           % Diese Datei enthält alle Layouteinstellungen
+\newcommand{\dokumentTitel}{Dokumentation}
+
+
+\usepackage[english, ngerman]{babel}
+%%% Für PDFLatex
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%%% Für XeLaTeX
+\usepackage{fontspec}
+%\setmainfont{DejaVu Sans}
+%%%
+%
+%Config und Commands
+%
+\input{preamble/config.tex}
+
+\begin{document}
+
+\input{titlepage/titlepage.tex}
+%\input{titlepage/titlepage2.tex}
+
+\newgeometry{top=25mm, left=25mm, right=25mm, bottom=25mm}
+
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\clearpage
+\listoftables   
+
+\clearpage
+\lstlistoflistings
+
+\include{sections/01_einleitung_und_kontext}
+% Kapitel 2 enthält nur einige Beispiele
+%\include{sections/02_realisierung}
+\include{sections/03_architektur}
+\include{sections/04_testkonzept}
+\include{sections/05_dod}
+\include{sections/06_branching_modell}
+\include{sections/07_test_build_ci}
+\include{sections/08_schaetzung}
+\include{sections/09_burndown_charts}
+\include{sections/10_velocity}
+\include{sections/11_reflektion}
+\include{sections/12_protokoll_taetigkeiten}
+\include{sections/13_usability}
+\include{sections/14_meetings}
+
+%\include{sections/0x_testkapitel}
+
+\end{document}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.werwolf_spielleiter.viewModel_gamepreperation.TradeSelectViewModel">
+   <children>
+      <VBox alignment="CENTER" spacing="25.0">
+         <children>
+            <Label styleClass="label-header" text="Die Werwölfe von Düsterwald - Der Pakt" />
+            <HBox alignment="CENTER" spacing="50.0">
+               <children>
+                  <Label styleClass="label-text" text="Berufe auswählen" />
+                  <Button fx:id="buttonSelectTradesReturn" focusTraversable="false" mnemonicParsing="false" onAction="#lastSceneButton" text="Zurück" />
+                  <Button fx:id="buttonSelectTradesNext" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#save" text="weiter" />
+               </children>
+            </HBox>
+            <GridPane hgap="5.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="image_vagabond" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label styleClass="label-text" text="Vagabund">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboCountVagabond" prefHeight="25.0" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="3">
+                     <children>
+                        <ImageView fx:id="image_farmer" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label styleClass="label-text" text="Bauer">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Label>
+                     </children></HBox>
+                  <HBox GridPane.columnIndex="4">
+                     <children>
+                        <ComboBox fx:id="comboCountFarmer" prefHeight="25.0" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="image_confessor" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label styleClass="label-text" text="Beichtvater">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboCountConfessor" prefHeight="25.0" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Label fx:id="lblDisplaySelectCards" styleClass="label-info" text="noch X Berufe auswählen" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

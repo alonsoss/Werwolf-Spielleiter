@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.werwolf_spielleiter.viewModel_character.WildChildViewModel">
+   <children>
+      <VBox alignment="CENTER" layoutX="275.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblWildChildTitle" text="Das wilde Kind erwacht und wählt ein Vorbild" />
+            <Label fx:id="lblDisplayChosenPlayer" />
+            <Button fx:id="buttonConfirmIdol" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#confirmIdol" text="Weiter" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.werwolf_spielleiter.viewModel.PlayerVictimViewModel">
+   <children>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label fx:id="lblVarSceneTitle" styleClass="label-header" text="Placeholder" />
+                  <GridPane fx:id="gridPlayerVictim" alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints vgrow="SOMETIMES" />
+                      <RowConstraints vgrow="SOMETIMES" />
+                      <RowConstraints vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</StackPane>

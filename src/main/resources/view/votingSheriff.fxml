@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="329.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="CENTER" prefHeight="700.0" prefWidth="1223.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label styleClass="label-header" text="Abgabe der Stimmen für die Wahl des Hauptmannes" textAlignment="CENTER" />
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <Label fx:id="lblPlayerOne" styleClass="label-text" text="Label" />
+                        <ComboBox fx:id="comboVotingPlayerOne" prefHeight="25.0" prefWidth="56.0" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <Label fx:id="lblPlayerTwo" styleClass="label-text" text="Label" />
+                        <ComboBox fx:id="comboVotingPlayerTwo" prefHeight="25.0" prefWidth="56.0" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <Label fx:id="lblPlayerThree" styleClass="label-text" text="Label" />
+                        <ComboBox fx:id="comboVotingPlayerThree" prefHeight="25.0" prefWidth="56.0" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <Label fx:id="lblPlayerFour" styleClass="label-text" text="Label" />
+                        <ComboBox fx:id="comboVotingPlayerFour" prefHeight="25.0" prefWidth="56.0" />
+                    </children>
+                </HBox>
+                <Button fx:id="buttonConfirm" defaultButton="true" mnemonicParsing="false" onAction="#nextSceneVoting" text="Abstimmung bestätigen" />
+                <Label fx:id="lblVoting" styleClass="label-info" text="noch x Stimmen abgeben" />
+            <Label fx:id="lblHinweis" styleClass="label-info" text="Wenn keine Einigung vorhanden ist wird er am nächsten Tag erneut gewählt" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+image: maven:latest
+
+stages:
+    - test
+    - build
+
+test:
+  stage: test
+  script:
+    - mvn test -Dglass.platform=Monocle -Dmonocle.platform=Headless -Dprism.order=sw
+    
+build:
+  stage: build
+  script:
+   - mvn clean package -Dmaven.test.skip=true
+  artifacts:
+    paths:
+    - target/*.jar

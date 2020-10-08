@@ -1,0 +1,35 @@
+\chapter{Testkonzept}
+In diesem Kapitel wird das umgesetzte Testkonzept des Softwareprojekts beschrieben. Dieses besteht dabei aus automatisierten Tests mittels JUnit, welche in \autoref{sec:automatisierteTests} näher beschrieben werden, sowie aus manuellen Tests für das User Interface. Letztere werden in \autoref{sec:manuelleTests} beschrieben.
+
+\section{Automatisierte Tests}
+\label{sec:automatisierteTests}
+Zum Testen des \emph{Models} werden automatisierte Tests mittels JUnit verwendet. Dabei wird eine Testabdeckung von 100\% angestrebt, welche auch nahezu erreicht wird. Das \emph{ViewModel} wird nur teilweise automatisiert getestet, weshalb hier eine niedrigere Testabdeckung erreicht wird. Die nicht mit Tests abgedeckten Teile des \emph{ViewModels} sind überwiegend \emph{GUI}-Bestandteile und werden, wie in \autoref{sec:manuelleTests} beschrieben getestet.
+\section{Manuelle Tests}
+\label{sec:manuelleTests}
+Um auch die Teile der Software zu testen, die nicht durch die in \autoref{sec:automatisierteTests} beschriebenen automatisierten Tests abgedeckt werden, wurden eine Reihe von manuellen Testfällen entwickelt. Diese sind insgesamt in unserem Projektwiki zu finden und werden hier der Übersicht halber nur ausschnittsweise gezeigt.
+	\subsection{Tests zur Spielvorbereitung}
+		\subsubsection{Spieleranzahl}
+			\begin{packed_itemize}
+				\item[\(\square\)] Karten umdrehen und Berufe anzeigen hat keine Auswirkungen
+				\item[\(\square\)] Neues Spiel starten hat keine Auswirkungen
+			\end{packed_itemize}
+		\subsubsection{Spielernamen}
+			\begin{packed_itemize}
+				\item[\(\square\)] Karten umdrehen und Berufe anzeigen hat keine Auswirkungen
+				\item[\(\square\)] Neues Spiel starten hat keine Auswirkungen
+			\end{packed_itemize}
+		\subsubsection{Kartenauswahl}
+			\begin{packed_itemize}
+				\item[\(\square\)] Karten umdrehen und Berufe anzeigen hat keine Auswirkungen
+				\item[\(\square\)] Neues Spiel starten hat keine Auswirkungen
+			\end{packed_itemize}
+		\subsubsection{Kartenverteilung (Start Game)}
+			\begin{packed_itemize}
+				\item[\(\square\)] Es wurden so viele Spieler platziert, wie festgelegt.
+				\item[\(\square\)] Die eingegebenen Namen der Spieler werden angezeigt.
+				\item[\(\square\)] Die Charakterkarten sind anhand der ausgesuchten Menge verteilt. (Mit Dieb sind zwei Karten nicht an die Spieler verteilt worden.)
+				\item[\(\square\)] mit Berufe: die Berufsplättchen wurden entsprechend der eingegebenen Anzahl verteilt.
+				\item[\(\square\)] ohne Berufe: die Charakterkarten lassen sich umdrehen.
+				\item[\(\square\)] mit Berufe: die Charakterkarten lassen sich umdrehen
+				\item[\(\square\)] mit Berufe: die Berufsplättchen lassen sich anzeigen.
+			\end{packed_itemize}

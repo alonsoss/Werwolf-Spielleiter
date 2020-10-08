@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="149.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.werwolf_spielleiter.viewModel.StartNightViewModel">
+   <children>
+      <VBox alignment="CENTER" layoutX="191.0" layoutY="207.0" prefHeight="350.0" prefWidth="550.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="label-header" text="Das Dorf schläft ein..." />
+            <Button fx:id="buttonNightBegin" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#beginNight" text="weiter" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

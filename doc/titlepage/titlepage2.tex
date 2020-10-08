@@ -1,0 +1,59 @@
+% Dies ist die Titelseite.
+% Die Ausgabe darf 1 Seite nicht überschreiten, also ggf. Abstände anpassen
+% Die Angabe in [...] gibt den Abstand nach der entsprechenden Zeile an.
+
+
+%----Stil dieser Seite----------------------------------------------------------
+%\thispagestyle{plain}      % Kopfzeile bleibt leer
+
+
+%----Beginn der Titelseite------------------------------------------------------
+\begin{titlepage}
+
+%\hspace*{-2cm}
+
+\includegraphics[width=\textwidth]{titlepage/thl_logo.png}
+
+
+\vspace*{-2.8cm}
+
+
+~\\[5ex]
+
+%----zentrierte Ausrichtung über die gesamte Seite----------------------------
+\begin{center}
+
+%----Titel des Praktikum (\praktikumTitel in newComments zu verändern)--------
+{\relsize{4}{{\textsc{\praktikumTitel}}}}\\[5ex]
+%\textsc{\huge \praktikumTitel}\\[5ex]
+
+%----Titel des Teilprojektes (\projektTitel in newComments verändern)---------
+{\relsize{3}{{\textsc{\projektTitel}}}}\\[5ex]
+%\textsc{\LARGE \projektTitel}\\[5ex]
+
+%Software-Entwicklungspraktikum (SEP)\\
+Sommersemester 2020\\[6ex]
+%\the\year\\[6ex]
+
+{\relsize{3}{{\bfseries \dokumentTitel}}}\\[5ex]
+
+%----Daten des Auftraggebers
+Auftraggeber\\
+Technische Hochschule Lübeck\\
+
+Betreuer: \betreuer\\[5ex]
+
+\vspace*{2.8cm}
+
+Teammitglieder:\\
+
+\input{common/teilnehmer} % enthält Tabelle der Praktikumsteilnehmer
+
+\vspace*{2.0cm}
+
+\vfill
+Lübeck, \today
+
+\end{center}
+\end{titlepage}
+

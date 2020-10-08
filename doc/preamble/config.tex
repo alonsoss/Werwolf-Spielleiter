@@ -1,0 +1,32 @@
+%%% New Commands & Environments
+%%%
+\newcommand{\apptitle}{Werwolf-Spielleiter}
+\newcommand{\xmark}{\ding{55}}
+
+\setlength{\parindent}{0pt}
+\setlength{\cftsubsubsecnumwidth}{4em}
+
+\newcommand{\praktikumTitel}{Praktikum Softwaretechnik 2}
+\newcommand{\projektTitel}{Werwolf Spielleiter}
+\newcommand{\betreuer}{Matthias Hamann}
+
+\definecolor{tuRed}{cmyk}{0.1,1.0,0.8,0.0}
+
+\newenvironment{packed_itemize}{
+	\begin{itemize}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{itemize}}
+
+%%% Default Settings for Listings
+\lstset{
+	language=Java,
+	breaklines=true,
+	backgroundcolor=\color{lightgray},
+	captionpos=b,
+	basicstyle=\small,
+	numbers=left,
+	numberstyle=\tiny,
+	frame=TRbl,
+}

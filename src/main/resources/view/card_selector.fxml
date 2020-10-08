@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" spacing="25.0">
+         <children>
+            <Label styleClass="label-header" text="Die Werwölfe von Düsterwald - Der Pakt" />
+            <HBox alignment="CENTER" spacing="50.0">
+               <children>
+                  <Label styleClass="label-text" text="Karten auswählen" />
+                  <Button fx:id="buttonSelectCardsLast" focusTraversable="false" mnemonicParsing="false" onAction="#lastSceneButton" text="Zurück" />
+                  <Button fx:id="buttonSelectCardsNext" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#save" text="Weiter" />
+               </children>
+            </HBox>
+            <GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="80.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" GridPane.columnIndex="2">
+                     <children>
+                        <Label styleClass="label-text" text="Werwölfe" underline="true" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" GridPane.columnIndex="4">
+                     <children>
+                        <Label styleClass="label-text" text="Dorfbewohner" underline="true" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="label-text" text="einfacher Werwolf">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="label-text" text="einfacher Dorfbewohner">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Label styleClass="label-text" text="Hexe">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboCountWerewolf" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboCountVillager" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <children>
+                        <ComboBox fx:id="comboCountWitch" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <children>
+                        <ComboBox fx:id="comboCountHunter" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <children>
+                        <Label styleClass="label-text" text="Jäger">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <children>
+                        <Label styleClass="label-text" text="Amor">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <children>
+                        <ComboBox fx:id="comboCountCupid" prefWidth="56.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <children>
+                        <Label styleClass="label-text" text="Seherin" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <children>
+                        <ComboBox fx:id="comboCountSeer" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <children>
+                        <Label styleClass="label-text" text="Kleines Mädchen" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                     <children>
+                        <ComboBox fx:id="comboCountLittleGirl" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefWidth="200.0" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <children>
+                        <Label styleClass="label-text" text="Dieb" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <ComboBox fx:id="comboCountThief" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="label-text" text="Einzelgänger" underline="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="label-text" text="Weißer Werwolf">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboCountWhiteWerewolf" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <Label styleClass="label-text" text="Urwolf" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <children>
+                        <ComboBox fx:id="comboCountGreatWolf" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <children>
+                        <Label styleClass="label-text" text="Großer, böser Wolf" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <children>
+                        <ComboBox fx:id="comboCountBigBadWolf" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <ComboBox fx:id="comboCountWildChild" prefHeight="25.0" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.rowIndex="6">
+                     <children>
+                        <Label styleClass="label-text" text="Wildes Kind" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" GridPane.rowIndex="4">
+                     <children>
+                        <Label contentDisplay="CENTER" styleClass="label-text" text="Zweideutige" underline="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.rowIndex="7">
+                     <children>
+                        <Label styleClass="label-text" text="Wolfshund" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <children>
+                        <ComboBox fx:id="comboCountDogWolf" prefHeight="25.0" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <children>
+                        <Label styleClass="label-text" text="Fuchs" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="5" GridPane.rowIndex="7">
+                     <children>
+                        <ComboBox fx:id="comboCountFox" prefWidth="56.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="radioSheriff" mnemonicParsing="false" text="Mit Hauptmann spielen">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </RadioButton>
+                  <RadioButton fx:id="radioTrade" mnemonicParsing="false" text="Mit Berufen spielen" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <Label fx:id="lblDisplaySelectCards" styleClass="label-info" text="noch X Karten auswählen" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

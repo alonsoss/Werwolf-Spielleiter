@@ -1,0 +1,45 @@
+.background {
+    -fx-background-color: sandybrown;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-border-style: solid
+}
+
+.sheriff {
+    -fx-background-color: lightgray;
+}
+
+.werewolf-victim {
+    -fx-background-color: orange;
+}
+
+.dead {
+    -fx-background-color: darkred;
+}
+
+.alive {
+    -fx-background-color: darkgreen;
+}
+
+.awake-passive {
+    -fx-background-color: cyan;
+}
+
+.awake {
+    -fx-background-color: #FF0000;
+}
+
+.highlight {
+    -fx-border-width: 2px;
+    -fx-border-color: #00FF00;
+    -fx-border-style: solid
+}
+
+.label {
+    -fx-font-family: "Comic Sans MS";
+}
+
+.label-lover {
+    -fx-text-fill: yellow;
+    -fx-font-weight: bold;
+}

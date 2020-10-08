@@ -1,0 +1,50 @@
+\chapter{Test-, Buildautomatisierung, CI}
+
+Das Projekt Werwolf-Spielleiter wird in einer CI-Pipeline bei jedem Push auf eine Branch automatisch getestet und gebaut. Hierfür verwendet werden Runners der Technischen Hochschule Lübeck und GitLab als Platfform für die Versionskontrollsystem. Die Software selber wird, wie in Abbildung \ref{lst:ymlConfig01} dargestellt, in einem Maven Docker Container getestet und gebaut. Die Konfiguration der CI-Pipeline erfolgt über eine GitLab CI YML Datei. Im Folgenden wird diese genauer erläutert.
+
+\medskip
+\begin{center}
+	\begin{minipage}{0.7\textwidth}
+		\lstinputlisting[firstnumber=1, firstline=1, lastline=1, caption=Projekt CI Docker-Konfiguration, label= lst:ymlConfig01]{../.gitlab-ci.yml}
+	\end{minipage}
+\end{center}
+
+\section{Testautomatisierung}
+
+Bevor das Projekt gebaut wird, werden immer erst alle Unit-Tests ausgeführt. Schlägt ein Test fehl wird die Pipeline abgebrochen bzw. der Build-Prozess erfolgt nicht. Die Unit-Tests werden von dem Build-Management-Tool Maven aufgerufen und Headless getestet, siehe Abbildung \ref{lst:ymlConfig02} Zeile 10. Da der Werwolf-Spielleiter das JavaFX Framework verwendet, wird dies benötigt. Die Unit-Tests testen nicht nur das Modell, sondern auch andere Teile der Software, wie zum Beispiel ob die richtige Anzahl an Textfeldern angezeigt wird.
+
+\medskip
+\begin{center}
+	\begin{minipage}{0.7\textwidth}
+		\lstinputlisting[firstnumber=7, firstline=7, lastline=10, caption=Projekt CI Test-Konfiguration, label= lst:ymlConfig02]{../.gitlab-ci.yml}
+	\end{minipage}
+\end{center}
+
+Des Weiteren wird für die Headless Tests das Modul Monocle von TestFX verwendet. Dieses emuliert ein Software Display auf dem die JavaFX Anwendung angezeigt werden kann. Das Modul wird durch Maven automatisch nachgeladen (Abbildung \ref{lst:pomConfig01}) und in der GitLab CI YML Datei im Maven Test Befehl eingebunden (Abbildung \ref{lst:ymlConfig02} Zeile 10).
+
+\medskip
+\begin{center}
+	\begin{minipage}{0.7\textwidth}
+		\lstinputlisting[firstnumber=244, firstline=244, lastline=249, caption=Maven POM CI Test-Konfiguration, label= lst:pomConfig01]{../pom.xml}
+	\end{minipage}
+\end{center}
+
+\section{Buildautomatisierung}
+
+Wenn alle Test positiv waren erfolgt der Build-Prozess. Dafür werden die Befehle \textit{clean} und \textit{package} von Maven verwendet (Abbildung \ref{lst:ymlConfig03}). Durch \textit{clean} werden vorherige Build Artefakte und temporäre Dateien gelöscht. Mit dem Zusatz \textit{Dmaven.test.skip} werden die Tests übersprungen die normalerweise mit dem Befehl \textit{package} mit ausgeführt werden. Dies ist aufgrund dessen, da die Test in einer separaten Sektion vorher schon ausgeführt wurden. Außerdem ist hier ein Pfad angegeben, wo sich die gebauten Artefakte nach dem Build-Prozess befinden, damit diese automatisch von GitLab aufgegriffen und zum Download angeboten werden können.
+
+\medskip
+\begin{center}
+	\begin{minipage}{0.7\textwidth}
+		\lstinputlisting[firstnumber=12, firstline=12, lastline=18, caption=Projekt CI Build-Konfiguration, label= lst:ymlConfig03]{../.gitlab-ci.yml}
+	\end{minipage}
+\end{center}
+
+Gebaut werden die JAR-Dateien für die Plattformen Windows, Linux und Mac. Hierfür wurden die JavaFX Abhängigkeiten von allen Plattformen in die Maven POM des Projekts eingebunden. Außerdem wird das Maven Plugin Shade verwendet um eine Fat JAR zu erzeugen, damit beim Start der Anwendung keine Abhängigkeiten von JavaFX nachgeladen werden müssen.
+
+\medskip
+\begin{center}
+	\begin{minipage}{0.8\textwidth}
+		\lstinputlisting[firstnumber=238, firstline=238, lastline=242, caption=Maven POM Build-Konfiguration, label= lst:pomConfig02]{../pom.xml}
+	\end{minipage}
+\end{center}

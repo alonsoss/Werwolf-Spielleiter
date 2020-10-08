@@ -1,0 +1,89 @@
+.background {
+    -fx-background-color: black;
+}
+
+.label-header {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 18pt;
+    -fx-text-fill: yellow;
+}
+
+.label-text {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-text-fill: yellow;
+}
+
+.label-info {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-text-fill: red;
+}
+
+.text-field {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: dimgray;
+    -fx-background-color: yellow;
+}
+
+.button {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-text-fill: yellow;
+    -fx-background-color: red;
+}
+
+.radio-button {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-text-fill: yellow;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: red;
+}
+
+.radio-button .radio {
+    -fx-background-color: yellow;
+}
+
+.combo-box {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 5pt;
+    -fx-background-color: yellow;
+}
+
+.combo-box .list-view .list-cell {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-background-color: yellow;
+}
+
+.combo-box .list-view .list-cell:hover {
+    -fx-text-fill: white;
+    -fx-background-color: dodgerblue;
+}
+
+.combo-box .cell:selected {
+    -fx-text-fill: black;
+}
+
+.combo-box .list-cell {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 10pt;
+    -fx-background-color: yellow;
+}
+
+.slider .track {
+    -fx-background-color:yellow;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: yellow;
+}
+
+.slider .thumb {
+    -fx-background-color: firebrick;
+}

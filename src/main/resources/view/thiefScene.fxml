@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="label-header" text="Der Dieb erwacht..." />
+            <Label styleClass="label-text" text="... und sucht sich eine Karte aus der Mitte aus. " />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="imageViewCard1" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#getFirst" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageViewCard2" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#getSecond" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <Button fx:id="buttonSleep" mnemonicParsing="false" onAction="#getNone" text="Keine Karte auswählen" />
+            <Label fx:id="lblInfo" styleClass="label-info" text="Der Dieb kann / muss eine Karte auswählen" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
